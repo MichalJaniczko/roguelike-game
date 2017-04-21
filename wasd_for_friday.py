@@ -37,7 +37,7 @@ def insert_player(board, width, height):
 
 
 def getch():
-    """Function take imput key and return it in "ch""""
+    """Function take imput key and return it in "ch"""
     import sys
     import tty
     import termios
