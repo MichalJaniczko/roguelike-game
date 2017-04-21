@@ -4,15 +4,18 @@ import os
 
 
 def create_board(width, height):
+    """Function create game area (borders made with #),
+    width and height are imput parameters define wer borders are made
+    """
     board = []
     for row in range(0, height):
         board_row = []
         for column in range(0, width):
             if row == 0 or row == height - 1:
-                board_row.append("X")
+                board_row.append("#")
             else:
                 if column == 0 or column == width - 1:
-                    board_row.append("X")
+                    board_row.append("#")
                 else:
                     board_row.append(" ")
         board.append(board_row)
@@ -20,6 +23,7 @@ def create_board(width, height):
 
 
 def print_board(board):
+    """Function print game area"""
     for row in board:
         for char in row:
             print(char, end='')
@@ -27,12 +31,16 @@ def print_board(board):
 
 
 def insert_player(board, width, height):
+    """Function place player @ on board in place define by two parameters"""
     board[height][width] = '@'
     return board
 
 
 def getch():
-    import sys, tty, termios
+    """Function take imput key and return it in "ch""""
+    import sys
+    import tty
+    import termios
     fd = sys.stdin.fileno()
     old_settings = termios.tcgetattr(fd)
     try:
@@ -44,6 +52,10 @@ def getch():
 
 
 def move(x_pos, y_pos, character):
+    """Function responsible for movement player,
+    get paramet character and when it equal to "wasd" change position by defined value.
+    Function prevent cross boarder of game area.
+    """
     if character == "w" and y_pos > 1:
         y_pos -= 1
     if character == "s" and y_pos < 18:
