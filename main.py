@@ -17,5 +17,6 @@ def main():
         board_with_player = insert_player(forestmap, x_pos, y_pos)
         print_board(board_with_player)
 
-#if __name__ == __main__:
-main()
+if __name__ == "__main__":
+    main()
+    
