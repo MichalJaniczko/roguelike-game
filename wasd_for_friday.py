@@ -56,7 +56,9 @@ def move(x_pos, y_pos, character):
     get paramet character and when it equal to "wasd" change position by defined value.
     Function prevent cross boarder of game area.
     """
-    if character == "w" and y_pos > 1:
+    if character == "w":
+        if create_board[x_pos][y_pos] == "#":
+            y_pos += 1
         y_pos -= 1
     if character == "s" and y_pos < 18:
         y_pos += 1
