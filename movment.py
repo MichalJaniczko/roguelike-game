@@ -6,7 +6,7 @@ def move(x_pos, y_pos, character, forestmap):
     """
 
 
-    forestmap[y_pos][x_pos] = "."
+    #forestmap[y_pos][x_pos] = "."
     if character == "w":
         if forestmap[y_pos - 1][x_pos] == ".":
             y_pos -= 1
